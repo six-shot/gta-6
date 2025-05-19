@@ -29,7 +29,7 @@ export default function Carousel() {
       gsap.set(initialSlide, {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       });
-      gsap.set(initialSlide.querySelector(`.${styles.slideImg} img`), {
+      gsap.set(initialSlide.querySelector(`.${styles.slideImg} video`), {
         y: "0%",
       });
       initMarqueeAnimation(
@@ -79,7 +79,14 @@ export default function Carousel() {
       newSlide.className = styles.slide;
       newSlide.innerHTML = `
         <div class="${styles.slideImg}">
-          <img src="${slideData.image}" alt="${slideData.marquee}" />
+          <video 
+            src="${slideData.video}" 
+            muted 
+            loop 
+            playsInline 
+            autoPlay
+            style="object-fit: cover; width: 100%; height: 100%;"
+          />
         </div>
         <div class="${styles.slideCopy}">
           <div class="${styles.slideTag}">
@@ -112,7 +119,7 @@ export default function Carousel() {
       gsap.killTweensOf(currentSlideCopy);
 
       if (isScrollingForward) {
-        const newSlideImg = newSlide.querySelector(`.${styles.slideImg} img`);
+        const newSlideImg = newSlide.querySelector(`.${styles.slideImg} video`);
         const newSlideCopy = newSlide.querySelector(`.${styles.slideCopy}`);
 
         gsap.set(newSlide, {
@@ -162,7 +169,7 @@ export default function Carousel() {
           },
         });
       } else {
-        const newSlideImg = newSlide.querySelector(`.${styles.slideImg} img`);
+        const newSlideImg = newSlide.querySelector(`.${styles.slideImg} video`);
         const newSlideCopy = newSlide.querySelector(`.${styles.slideCopy}`);
 
         gsap.set(newSlide, {
@@ -261,14 +268,16 @@ export default function Carousel() {
 
   return (
     <>
-   
       <section className={styles.carousel} ref={carouselRef}>
         <div className={styles.slide}>
           <div className={styles.slideImg}>
-            <img
-              src={slides[0].image}
-              alt={slides[0].marquee}
-              style={{ objectFit: "cover", transform: "scale(1.25)" }}
+            <video
+              src={slides[0].video}
+              muted
+              loop
+              playsInline
+              autoPlay
+              style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
           </div>
           <div className={styles.slideCopy}>
@@ -288,7 +297,6 @@ export default function Carousel() {
           ))}
         </div>
       </section>
-     
     </>
   );
 }

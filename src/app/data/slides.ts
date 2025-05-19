@@ -1,28 +1,28 @@
 const slides = [
   {
-    tag: "Website",
-    marquee: "Eclipse Interactive Art Portfolio",
-    image: "/slide-img-1.jpg",
+    tag: "GTA6",
+    marquee: "VICE CITY BABY",
+    video: "/2.mp4",
   },
   {
-    tag: "Branding",
-    marquee: "Solaris Avant-Garde Brand Identity",
-    image: "/slide-img-2.jpg",
+    tag: "GTA6",
+    marquee: "VICE CITY BABY",
+    video: "/3.mp4",
   },
   {
-    tag: "Experience",
-    marquee: "Nova Immersive Light Exhibition",
-    image: "/slide-img-3.jpg",
+    tag: "GTA6",
+    marquee: "VICE CITY BABY",
+    video: "/6.mp4",
   },
   {
-    tag: "Website",
-    marquee: "Luminex Virtual Reality Showcase",
-    image: "/slide-img-4.jpg",
+    tag: "GTA6",
+    marquee: "VICE CITY BABY",
+    video: "/4.mp4",
   },
   {
-    tag: "Marketing",
-    marquee: "Orion Digital Art Launch Campaign",
-    image: "/slide-img-5.jpg",
+    tag: "GTA6",
+    marquee: "VICE CITY BABY",
+    video: "/5.mp4",
   },
 ];
 
