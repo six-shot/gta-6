@@ -83,7 +83,6 @@ export default function Carousel() {
           <img src="${slideData.image}" alt="${slideData.marquee}" />
         </div>
         <div class="${styles.slideCopy}">
-        
           <div class="${styles.slideMarquee}">
             <div class="${styles.marqueeContainer}">
               <h1>${slideData.marquee}</h1>
@@ -108,7 +107,9 @@ export default function Carousel() {
 
       gsap.killTweensOf(currentSlide);
       gsap.killTweensOf(currentSlideImg);
-      gsap.killTweensOf(currentSlideCopy);
+      gsap.killTweensOf(
+        currentSlideCopy.querySelector(`.${styles.slideMarquee}`)
+      );
 
       if (isScrollingForward) {
         const newSlideImg = newSlide.querySelector(`.${styles.slideImg} img`);
@@ -216,7 +217,7 @@ export default function Carousel() {
     const scrollTrigger = ScrollTrigger.create({
       trigger: `.${styles.carousel}`,
       start: "top top",
-      end: `+=${window.innerHeight * 2}px`,
+      end: `+=${window.innerHeight * 5}px`,
       pin: true,
       pinSpacing: true,
       scrub: 1,
@@ -270,7 +271,6 @@ export default function Carousel() {
             />
           </div>
           <div className={styles.slideCopy}>
-       
             <div className={styles.slideMarquee}>
               <div className={styles.marqueeContainer}>
                 <h1>{slides[0].marquee}</h1>

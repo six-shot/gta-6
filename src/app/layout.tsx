@@ -9,15 +9,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ESEAgency Scroll-Powered Carousel",
-  description: "A modern scroll-powered carousel built with Next.js",
+  title: "GTA VI Landing Page Scroll Animation",
+  description: "A beautiful scroll animation landing page for GTA VI",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className={inter.variable}>
       <body>{children}</body>
