@@ -47,9 +47,6 @@ export default function Home() {
         <Overlay />
       </section>
 
-      <section className="outro">
-        <p>Build your empire. Rule your city.</p>
-      </section>
     </main>
   );
 }

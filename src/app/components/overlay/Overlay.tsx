@@ -204,7 +204,7 @@ export default function Overlay() {
         <rect
           width="100%"
           height="100%"
-          fill="#111117"
+          fill="#000000"
           mask="url(#logoRevealMask)"
         />
       </svg>
