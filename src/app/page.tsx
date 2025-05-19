@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <Carousel />
-      <section className="section hero">
+      {/* <section className="section hero">
         <div className="hero-img-container">
           <Image
             src="/hero-img-layer-1.jpg"
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="fade-overlay"></div>
 
         <Overlay />
-      </section>
+      </section> */}
 
     </main>
   );
