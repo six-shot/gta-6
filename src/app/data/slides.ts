@@ -1,28 +1,28 @@
 const slides = [
   {
-    tag: "GTA6",
-    marquee: "VICE CITY BABY",
-    video: "/2.mp4",
+    tag: "Environment",
+    marquee: "Vice City's Stunning Environment",
+    image: "/1.png",
   },
   {
-    tag: "GTA6",
-    marquee: "VICE CITY BABY",
-    video: "/3.mp4",
+    tag: "Character",
+    marquee: "Lucia - The Female Protagonist",
+    image: "/4.png",
   },
   {
-    tag: "GTA6",
-    marquee: "VICE CITY BABY",
-    video: "/6.mp4",
+    tag: "Duo",
+    marquee: "Jason & Lucia - The Dynamic Duo",
+    image: "/8.png",
   },
   {
-    tag: "GTA6",
-    marquee: "VICE CITY BABY",
-    video: "/4.mp4",
+    tag: "Partners",
+    marquee: "Jason & Lucia in Action",
+    image: "/5.png",
   },
   {
-    tag: "GTA6",
-    marquee: "VICE CITY BABY",
-    video: "/5.mp4",
+    tag: "Grand Theft Auto VI",
+    marquee: "Welcome to Vice City",
+    image: "/7.png",
   },
 ];
 

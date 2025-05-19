@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -29,7 +30,7 @@ export default function Carousel() {
       gsap.set(initialSlide, {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       });
-      gsap.set(initialSlide.querySelector(`.${styles.slideImg} video`), {
+      gsap.set(initialSlide.querySelector(`.${styles.slideImg} img`), {
         y: "0%",
       });
       initMarqueeAnimation(
@@ -79,19 +80,10 @@ export default function Carousel() {
       newSlide.className = styles.slide;
       newSlide.innerHTML = `
         <div class="${styles.slideImg}">
-          <video 
-            src="${slideData.video}" 
-            muted 
-            loop 
-            playsInline 
-            autoPlay
-            style="object-fit: cover; width: 100%; height: 100%;"
-          />
+          <img src="${slideData.image}" alt="${slideData.marquee}" />
         </div>
         <div class="${styles.slideCopy}">
-          <div class="${styles.slideTag}">
-            <p>${slideData.tag}</p>
-          </div>
+        
           <div class="${styles.slideMarquee}">
             <div class="${styles.marqueeContainer}">
               <h1>${slideData.marquee}</h1>
@@ -119,7 +111,7 @@ export default function Carousel() {
       gsap.killTweensOf(currentSlideCopy);
 
       if (isScrollingForward) {
-        const newSlideImg = newSlide.querySelector(`.${styles.slideImg} video`);
+        const newSlideImg = newSlide.querySelector(`.${styles.slideImg} img`);
         const newSlideCopy = newSlide.querySelector(`.${styles.slideCopy}`);
 
         gsap.set(newSlide, {
@@ -169,7 +161,7 @@ export default function Carousel() {
           },
         });
       } else {
-        const newSlideImg = newSlide.querySelector(`.${styles.slideImg} video`);
+        const newSlideImg = newSlide.querySelector(`.${styles.slideImg} img`);
         const newSlideCopy = newSlide.querySelector(`.${styles.slideCopy}`);
 
         gsap.set(newSlide, {
@@ -224,7 +216,7 @@ export default function Carousel() {
     const scrollTrigger = ScrollTrigger.create({
       trigger: `.${styles.carousel}`,
       start: "top top",
-      end: `+=${window.innerHeight * 15}px`,
+      end: `+=${window.innerHeight * 2}px`,
       pin: true,
       pinSpacing: true,
       scrub: 1,
@@ -271,19 +263,14 @@ export default function Carousel() {
       <section className={styles.carousel} ref={carouselRef}>
         <div className={styles.slide}>
           <div className={styles.slideImg}>
-            <video
-              src={slides[0].video}
-              muted
-              loop
-              playsInline
-              autoPlay
-              style={{ objectFit: "cover", width: "100%", height: "100%" }}
+            <img
+              src={slides[0].image}
+              alt={slides[0].marquee}
+              style={{ objectFit: "cover", transform: "scale(1.25)" }}
             />
           </div>
           <div className={styles.slideCopy}>
-            <div className={styles.slideTag}>
-              <p>{slides[0].tag}</p>
-            </div>
+       
             <div className={styles.slideMarquee}>
               <div className={styles.marqueeContainer}>
                 <h1>{slides[0].marquee}</h1>
