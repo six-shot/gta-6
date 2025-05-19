@@ -87,7 +87,7 @@ export default function Overlay() {
       scale: initialOverlayScale,
     });
 
-    let scrollTriggerInstance;
+    let scrollTriggerInstance: ScrollTrigger | undefined;
 
     function setupScrollTrigger() {
       if (scrollTriggerInstance) {
