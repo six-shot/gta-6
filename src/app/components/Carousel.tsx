@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -79,7 +80,7 @@ export default function Carousel() {
       newSlide.className = styles.slide;
       newSlide.innerHTML = `
         <div class="${styles.slideImg}">
-          <img src="${slideData.image}" alt="" />
+          <img src="${slideData.image}" alt="${slideData.marquee}" />
         </div>
         <div class="${styles.slideCopy}">
           <div class="${styles.slideTag}">
@@ -241,7 +242,7 @@ export default function Carousel() {
           try {
             createAndAnimateSlide(targetSlideIndex, isScrollingForward);
             activeSlideIndexRef.current = targetSlideIndex;
-          } catch (err) {
+          } catch {
             isAnimatingSlideRef.current = false;
           }
         }
@@ -261,11 +262,20 @@ export default function Carousel() {
 
   return (
     <>
-      
+      <section className={styles.intro}>
+        <p>Where Vision Ignites and Boundaries Fade.</p>
+      </section>
       <section className={styles.carousel} ref={carouselRef}>
         <div className={styles.slide}>
           <div className={styles.slideImg}>
-            <img src={slides[0].image} alt="" />
+            <Image
+              src={slides[0].image}
+              alt={slides[0].marquee}
+              fill
+              priority
+              sizes="100vw"
+              style={{ objectFit: "cover", transform: "scale(1.25)" }}
+            />
           </div>
           <div className={styles.slideCopy}>
             <div className={styles.slideTag}>
@@ -284,7 +294,9 @@ export default function Carousel() {
           ))}
         </div>
       </section>
-
+      <section className={styles.outro}>
+        <p>Endless Horizons Await Beyond the Canvas.</p>
+      </section>
     </>
   );
 }
