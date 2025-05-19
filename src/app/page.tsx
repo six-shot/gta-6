@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Overlay from "./components/overlay/Overlay";
 import Carousel from "./components/Carousel";
 
 export default function Home() {
